@@ -6033,6 +6033,16 @@ export default {
                 },
             ],
         },
+        IFUNC:{
+            d: "对自定义函数",
+            a: "对自定义函数",
+            p: [
+                {
+                    name: "对自定义函数",
+                    detail: "公式或表达式2"
+                }
+            ]
+        }
     },
     toolbar: {
         undo: "撤销",
@@ -7326,4 +7336,16 @@ export default {
         currentSheet: "当前工作表",
         allSheets: "所有工作表",
     },
+    houFnNav: {
+        houFnNavTitle: "函数生成",
+        classType: "类别",
+        funName: "函数名称",
+        params: "参数",
+        exec: "执行函数",
+        headerName: "参数名称",
+        headerValue: "参数值",
+        selectRange: "点击选择单元格",
+        ifGenTipSelectCell: "选择单元格",
+        ifGenTipSelectCellPlace: "请选择单元格",
+    }
 };

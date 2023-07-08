@@ -959,6 +959,31 @@ export default function luckysheetHandler() {
             if (ifFormulaGenerator.singleRangeFocus) {
                 $("#luckysheet-ifFormulaGenerator-dialog .singRange").click();
             }
+
+            if ($("#luckysheet-HouFnNav-singleRange-dialog").is(":visible")) {
+                //选择单个单元格
+                Store.luckysheet_select_status = false;
+                formula.rangestart = false;
+
+                $("#luckysheet-formula-functionrange-select")
+                    .css({
+                        left: col_pre,
+                        width: col - col_pre - 1,
+                        top: row_pre,
+                        height: row - row_pre - 1,
+                    })
+                    .show();
+                $("#luckysheet-formula-help-c").hide();
+
+                let range = getRangetxt(
+                    Store.currentSheetIndex,
+                    { row: [row_index, row_index], column: [col_index, col_index] },
+                    Store.currentSheetIndex,
+                );
+                $("#luckysheet-HouFnNav-singleRange-dialog input").val(range);
+
+                return;
+            }
             if ($("#luckysheet-ifFormulaGenerator-singleRange-dialog").is(":visible")) {
                 //选择单个单元格
                 Store.luckysheet_select_status = false;

@@ -1,7 +1,7 @@
-import { 
-    gridHTML, 
-    menuToolBar, 
-    flow, 
+import {
+    gridHTML,
+    menuToolBar,
+    flow,
     columnHeaderHTML,
     maskHTML,
     colsmenuHTML,
@@ -50,7 +50,7 @@ export default function luckysheetcreatedom(colwidth, rowheight, data, menu, tit
     // else {
     //     Store.flowdata = data;
     // }
-    
+
     let flowHTML = flow;
     if(Store.config == null){
         Store.config = {};

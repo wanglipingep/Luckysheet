@@ -5,7 +5,7 @@ import { replaceHtml } from '../../utils/util';
 import tooltip from '../../global/tooltip';
 import { getSheetIndex } from '../../methods/get';
 import Store from '../../store';
-
+import {getAllChartsBase64, toJson} from '../../global/api';
 // Initialize the export xlsx api
 function exportXlsx(options, config, isDemo) {
 
@@ -22,14 +22,14 @@ function downloadXlsx(data, filename) {
 }
 
 /**
- * 
- * @param {*} url 
- * @param {*} success 
- * @param {*} fail 
+ *
+ * @param {*} url
+ * @param {*} success
+ * @param {*} fail
  */
 function fetchAndDownloadXlsx({url,order}, success, fail) {
-    const luckyJson = luckysheet.toJson();
-    luckysheet.getAllChartsBase64((chartMap) => {
+    const luckyJson = toJson();
+    getAllChartsBase64((chartMap) => {
         luckyJson.chartMap = chartMap
         luckyJson.devicePixelRatio = window.devicePixelRatio
         luckyJson.exportXlsx = {
@@ -40,7 +40,8 @@ function fetchAndDownloadXlsx({url,order}, success, fail) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(luckyJson)
+            body: JSON.stringify(luckyJson),
+            credentials:"include"
         })
             .then((response) => response.blob())
             .then((blob) => {

@@ -39,6 +39,8 @@ const luckysheetConfigsetting = {
 
     defaultTextColor: '#000',
     defaultCellColor: '#fff',
+
+    remoteHost: 'http://localhost:9609',
 }
 
 export default luckysheetConfigsetting;

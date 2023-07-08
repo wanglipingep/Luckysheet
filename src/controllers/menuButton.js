@@ -49,6 +49,7 @@ import {
     luckysheetContainerFocus,
 } from "../utils/util";
 import { openProtectionModal, checkProtectionFormatCells, checkProtectionNotEnable } from "./protection";
+import { openHouFnNavModal } from "../expendPlugins/houFnNav/houFnNav";
 import Store from "../store";
 import locale from "../locale/locale";
 import { checkTheStatusOfTheSelectedCells, frozenFirstRow, frozenFirstColumn } from "../global/api";
@@ -3641,13 +3642,12 @@ const menuButton = {
                     $menuButton.hide();
                     luckysheetContainerFocus();
 
-                    let $t = $(this),
-                        itemvalue = $t.attr("itemvalue");
-
+                    let $t = $(this), itemvalue = $t.attr("itemvalue");
+                    debugger
                     if (itemvalue == "print") {
                         //Print config
                         if (Store.luckysheetPrint) {
-                            luckysheetPrint = Store.luckysheetPrint;
+                            let luckysheetPrint = Store.luckysheetPrint;
                             const plugin = Store.plugins.find((item) => item.name === "print");
                             if (plugin && plugin.config) {
                                 luckysheetPrint.createDialog();
@@ -3669,6 +3669,12 @@ const menuButton = {
                 menuleft = menuleft - tlen + userlen;
             }
             mouseclickposition($menuButton, menuleft, $(this).offset().top + 25, "lefttop");
+        });
+
+        // 生成函数
+        $("#luckysheet-icon-HOU_FN_Nav").click(function() {
+            let sheetFile = sheetmanage.getSheetByIndex();
+            openHouFnNavModal(sheetFile);
         });
 
         $("body")

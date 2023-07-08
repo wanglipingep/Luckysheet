@@ -8,7 +8,7 @@ export default {
     row: 84, //空表格默认的行数据量
     allowCopy: true, //是否允许拷贝
     showtoolbar: true, //是否第二列显示工具栏
-    showinfobar: true, //是否显示顶部名称栏
+    showinfobar: false, //是否显示顶部名称栏
     showsheetbar: true, //是否显示底部表格名称区域
     showstatisticBar: true, //是否显示底部计数栏
     pointEdit: false, //是否是编辑器插入表格模式
@@ -50,14 +50,16 @@ export default {
     editMode: false, //是否为编辑模式
     beforeCreateDom: null,//表格创建之前的方法
     fireMousedown: null, //单元格数据下钻
-    lang: 'en', //language
-    plugins: [], //plugins, e.g. ['chart']
+    lang: 'zh', //language
+    plugins: [{ name: 'chart' },
+        { name: 'exportXlsx', config: { url: 'http://localhost:9004/luckysheet/api/exportExcel' } },
+        { name: 'print'}], //plugins, e.g. [{name:'chart'}]
     forceCalculation:false,//强制刷新公式，公式较多会有性能问题，慎用
     rowHeaderWidth: 46,
     columnHeaderHeight: 20,
     defaultColWidth:73,
     defaultRowHeight:19,
-    defaultFontSize:10,
+    defaultFontSize:11,
     limitSheetNameLength:true,    //是否限制工作表名的长度
     defaultSheetNameMaxLength:31,  //默认工作表名称的最大长度
     sheetFormulaBar:true, //是否显示公式栏
@@ -67,4 +69,5 @@ export default {
     cellRightClickConfig:{}, //自定义单元格右键菜单
     sheetRightClickConfig:{}, //自定义底部sheet页右击菜单
     imageUpdateMethodConfig:{}, //自定义图片同步方式
+    remoteHost: 'http://172.17.5.132:9609', // 配置请求地址
 }
