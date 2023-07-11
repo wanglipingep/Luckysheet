@@ -53,6 +53,7 @@ import { openHouFnNavModal } from "../expendPlugins/houFnNav/houFnNav";
 import Store from "../store";
 import locale from "../locale/locale";
 import { checkTheStatusOfTheSelectedCells, frozenFirstRow, frozenFirstColumn } from "../global/api";
+import {openHouFnNavSearchModal} from "../expendPlugins/houFnNav/houFnNavSearch";
 
 const menuButton = {
     menu:
@@ -3676,6 +3677,13 @@ const menuButton = {
             let sheetFile = sheetmanage.getSheetByIndex();
             openHouFnNavModal(sheetFile);
         });
+
+        // 查询函数
+        $("#luckysheet-icon-HOU_FN_Nav_Search").click(function() {
+            let sheetFile = sheetmanage.getSheetByIndex();
+            openHouFnNavSearchModal(sheetFile);
+        });
+
 
         $("body")
             .on("mouseover mouseleave", ".luckysheet-menuButton .luckysheet-cols-submenu", function(e) {

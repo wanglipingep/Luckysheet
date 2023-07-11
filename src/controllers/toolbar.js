@@ -59,6 +59,7 @@ export const defaultToolbar = [
     'print',
     'exportXlsx',
     'HOU_FN_Nav',
+    'HOU_FN_Nav_Search',
     'HOU_Report_Configuration'
 ];
 
@@ -103,6 +104,7 @@ export const toolbarIdMap = {
     print: '#luckysheet-icon-print', // 'print'
     exportXlsx: '#luckysheet-exportXlsx-btn-title', // 'export xlsx'
     HOU_FN_Nav:'#luckysheet-icon-HOU_FN_Nav',
+    HOU_FN_Nav_Search:'#luckysheet-icon-HOU_FN_Nav_Search',
     HOU_Report_Configuration:'#luckysheet-icon-HOU_Report_Configuration'
 };
 
@@ -858,6 +860,11 @@ export function createToolbarHtml() {
         data-tips="生成函数"
         id="luckysheet-icon-HOU_FN_Nav" role="button" style="user-select: none;margin-right: 10px;">
             <span id='HOU_FN_Nav'>生成函数</span>
+        </div>`,
+        HOU_FN_Nav_Search:`<div class="luckysheet-toolbar-select luckysheet-toolbar-menu-button luckysheet-inline-block" 
+        data-tips="查询函数"
+        id="luckysheet-icon-HOU_FN_Nav_Search" role="button" style="user-select: none;margin-right: 10px;">
+            <span id='HOU_FN_Nav_Search'>查询函数</span>
         </div>`,
         HOU_Report_Configuration:`<div class="luckysheet-toolbar-select luckysheet-toolbar-menu-button luckysheet-inline-block"
         id="luckysheet-icon-HOU_Report_Configuration" role="button" style="user-select: none;"    data-tips="报表">

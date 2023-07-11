@@ -7347,5 +7347,17 @@ export default {
         selectRange: "点击选择单元格",
         ifGenTipSelectCell: "选择单元格",
         ifGenTipSelectCellPlace: "请选择单元格",
+    },
+    houFnNavSearch: {
+        houFnNavTitle: "查询函数",
+        classType: "类别",
+        funName: "函数名称",
+        params: "参数",
+        exec: "执行函数",
+        headerName: "参数名称",
+        headerValue: "参数值",
+        selectRange: "点击选择单元格",
+        ifGenTipSelectCell: "选择单元格",
+        ifGenTipSelectCellPlace: "请选择单元格",
     }
 };

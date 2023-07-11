@@ -53,7 +53,7 @@ export default {
     lang: 'zh', //language
     plugins: [{ name: 'chart' },
         { name: 'exportXlsx', config: { url: 'http://localhost:9004/luckysheet/api/exportExcel' } },
-        { name: 'print'}], //plugins, e.g. [{name:'chart'}]
+        { name: 'print', config: {license: 'wanglp'}}], //plugins, e.g. [{name:'chart'}]
     forceCalculation:false,//强制刷新公式，公式较多会有性能问题，慎用
     rowHeaderWidth: 46,
     columnHeaderHeight: 20,
